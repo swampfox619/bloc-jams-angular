@@ -28,7 +28,7 @@
          }; 
         
         var getSongIndex = function(song) {
-            return currentAlbum.songs.indexOf(song);
+            return SongPlayer.currentAlbum.songs.indexOf(song);
         }; 
          
         SongPlayer.currentAlbum = Fixtures.getAlbum();
@@ -59,7 +59,7 @@
             if(currentSongIndex < 0) {
                 stopSong(song);
             } else {
-                var song = currentAlbum.songs[currentSongIndex];
+                var song = SongPlayer.currentAlbum.songs[currentSongIndex];
                 setSong(song);
                 playSong(song);
             }
@@ -69,15 +69,15 @@
             var currentSongIndex = getSongIndex(SongPlayer.currentSong);
             currentSongIndex++;
             
-            if(currentSongIndex > currentAlbum.songs.length) {
+            if(currentSongIndex > SongPlayer.currentAlbum.songs.length) {
                 stopSong(song);
             } else {
-                var song = currentAlbum.songs[currentSongIndex];
+                var song = SongPlayer.currentAlbum.songs[currentSongIndex];
                 setSong(song);
                 playSong(song);
             }
         };
-    
+
           return SongPlayer;
      };
  

@@ -50,6 +50,7 @@
                          $document.unbind('mouseup.thumb');
                     });
                  };
+             
              }
          };
      }
