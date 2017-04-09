@@ -40,6 +40,7 @@
         SongPlayer.currentAlbum = Fixtures.getAlbum();
         SongPlayer.currentSong = null; 
         SongPlayer.currentTime = null;
+        SongPlayer.volume = null;
          
         SongPlayer.play = function(song) {
             song = song || SongPlayer.currentSong;
@@ -88,6 +89,12 @@
          SongPlayer.setCurrentTime = function(time) {
              if (currentBuzzObject) {
                  currentBuzzObject.setTime(time);
+             }
+         };
+         
+         SongPlayer.setVolume = function(volume) {
+             if (currentBuzzObject) {
+                 currentBuzzObject.setVolume(volume);
              }
          };
          
