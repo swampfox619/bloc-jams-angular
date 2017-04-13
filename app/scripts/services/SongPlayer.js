@@ -40,7 +40,7 @@
         SongPlayer.currentAlbum = Fixtures.getAlbum();
         SongPlayer.currentSong = null; 
         SongPlayer.currentTime = null;
-        SongPlayer.volume = null;
+        SongPlayer.volume = 50;
          
         SongPlayer.play = function(song) {
             song = song || SongPlayer.currentSong;
@@ -86,6 +86,15 @@
             }
         };
 
+         SongPlayer.autoPlay = function(){
+            var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+            
+            if(SongPlayer.currentTime === SongPlayer.currentSong.duration){
+                currentSongIndex++;
+                playSong(song);
+             }
+         };
+         
          SongPlayer.setCurrentTime = function(time) {
              if (currentBuzzObject) {
                  currentBuzzObject.setTime(time);
